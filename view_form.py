@@ -12,3 +12,4 @@ class UserForm(FlaskForm):
                           DataRequired(message='Not Null')])
    email = EmailField('E-mail', validators=[DataRequired(message='Not Null')])
    submit = SubmitField('登入')
+   

@@ -1,0 +1,15 @@
+<body>
+    <form method="POST" action="{{ url_for('user') }}">
+        {{ form.hidden_tag() }}
+        <!-- 這是必填的設定，沒有填會出現異常 -->
+        <p>{{ form.username.label }} {{ form.username }}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    {{ error }}
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>{{ form.email.label }} {{ form.email }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+ </body>

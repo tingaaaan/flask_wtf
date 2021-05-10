@@ -1,11 +1,15 @@
 from flask import Flask, render_template
 import os
 from view_form import UserForm
+from flask_bootstrap import Bootstrap
 #  引入form類別
 
 app = Flask(__name__)
 app.config['SECRET_KEY']= os.urandom(24)
 # flask_wtf 預設需要設置暗語，避免CSRF攻擊
+
+# 表單初始化
+bootstrap = Bootstrap(app)
 
 @app.route('/user', methods=['GET', 'POST'])
 def user():
